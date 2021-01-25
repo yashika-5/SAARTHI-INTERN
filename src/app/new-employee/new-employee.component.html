@@ -1,0 +1,87 @@
+<div style="display: flex;">
+    <div
+        style="background-color: skyblue;text-align: center;color: white;border-radius: 2%;width: 50%;font-family: emoji;">
+        <h2>Add New Employee</h2>
+    </div>
+    <div style="margin-left: 35%;">
+        <button class="close" mat-button mat-dialog-title (click)="closeDialog()">X</button>
+    </div>
+</div>
+
+<div class="container col-lg-12"
+    style="background-color: rgba(0, 0, 0, 0.6);margin-top: 3%;padding-bottom: 2%;padding-top: 2%;">
+    <div class="row">
+        <div class="col-sm-12">
+            <form [formGroup]='empForm'>
+
+
+                <div class="form-row">
+                    <div class="form-group col-lg-6 col-sm-12">
+                        <label for="empName">Employee Name*</label>
+                        <div class="box">
+                            <input class="form-control" type="text" name="empName" required class="form-control"
+                                type="text" name="customerName" required formControlName="empName" id="empName">
+                                <!-- <span class="text-danger" 
+                                *ngIf="empForm.get('empName').invalid && empForm.get('empName').touched && empForm.get('empName').errors.required">
+                                Category ID can't be blank</span> -->
+    
+                            </div>
+                    </div>
+                        <div class="form-group  col-lg-6 col-sm-12">
+                            <label for="empId">Employee Id*</label>
+                            <div class="box">
+                                <input class="form-control" type="number" name="empId" required formControlName="empId"
+                                    id="empId">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-lg-6 col-sm-12">
+                            <label for="department">Department*</label>
+                            <select formControlName="department" class="form-control">
+                                <option disabled>Select Department</option>
+                                <option>Marketing</option>
+                                <option>Front End</option>
+                                <option>Testing</option>
+                                <option>Back End</option>
+                                <option>SEO</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-lg-6 col-sm-12">
+                            <label for="emailId">Email*</label>
+                            <div class="box">
+                                <input class="form-control" type="text" name="emailId" required
+                                    formControlName="emailId" id="emailId">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group  col-lg-6 col-sm-12 ">
+                            <label for="doj">Date of Joining*</label>
+                            <div class="box">
+                                <input class="form-control" type="date" name="doj" required formControlName="doj"
+                                    id="doj">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+            </form>
+        </div>
+
+    </div>
+</div>
+<div class="form-row text-center  " style="  border-radius: 40px;">
+    <div class="form-group  col-lg-6 col-sm-12 ">
+        <button type="button" (click)="addEmployee()" style="background-color: green;margin-top: 3%;margin-left: 6%;"
+            class="btn btn-info btn-outline-light btn-lg" [disabled]="empForm.invalid">Add Employee</button>
+
+    </div>
+    <div class="form-group  col-lg-6 col-sm-12 ">
+        <button type="button" (click)="resetForm()" style="background-color: red; margin-top: 3%;"
+            class="btn btn-info btn-outline-light btn-lg">Clear</button>
+
+    </div>
+</div>

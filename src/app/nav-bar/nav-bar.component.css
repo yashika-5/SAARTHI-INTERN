@@ -1,0 +1,13 @@
+.navbar-nav{
+    position: absolute;
+    right: 20px;
+}
+.nav-item{
+    color: whitesmoke;
+}
+.mat-icon{
+   color: whitesmoke;
+}
+.box:hover {
+    border-color: purple;
+ }
