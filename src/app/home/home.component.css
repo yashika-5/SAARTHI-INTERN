@@ -2,7 +2,7 @@
     padding:20px;
   }
   table{
-      border:1px solid red
+      border:1px solid #dc3545;
   }
   thead, tbody tr {
       display:table;
@@ -40,7 +40,7 @@
     border-radius: 10px;
   }
   ::-webkit-scrollbar-thumb {
-    background: red; 
+    background: #dc3545; 
     border-radius: 10px;
   }
   ::-webkit-scrollbar-thumb:hover {

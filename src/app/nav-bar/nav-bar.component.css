@@ -1,13 +1,18 @@
-.navbar-nav{
-    position: absolute;
-    right: 20px;
-}
 .nav-item{
     color: whitesmoke;
+    text-align: right;
+    padding-top: 10px
 }
 .mat-icon{
    color: whitesmoke;
 }
 .box:hover {
     border-color: purple;
- }
+}
+
+@media only screen and (min-width:991px) {
+    .navbar-nav {
+        position: absolute;
+        right: 20px;
+    }
+}
