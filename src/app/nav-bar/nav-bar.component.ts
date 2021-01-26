@@ -15,8 +15,8 @@ export class NavBarComponent implements OnInit {
 
   showDialog(){
     const dialogRef = this.dialog.open(NewEmployeeComponent, {
-        width: '750px',
-        height: '450px'
-    }); 
+        width: '800px',
+        height: '440px',
+        panelClass: 'custom-dialog-container' }); 
   }
 }

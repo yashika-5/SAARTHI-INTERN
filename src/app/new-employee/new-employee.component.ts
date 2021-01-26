@@ -9,13 +9,13 @@ import { EmployeeService } from '../services/employee.service';
   styleUrls: ['./new-employee.component.css']
 })
 export class NewEmployeeComponent implements OnInit {
-
+  options = ['Marketing', 'Front End','Testing', 'Back End', 'SEO'];
   empForm: FormGroup;
   constructor(public dialogRef: MatDialogRef<NewEmployeeComponent>,private employeService: EmployeeService) {
     this.empForm = new FormGroup({
       empName: new FormControl('',[Validators.required]),
       empId: new FormControl('',[Validators.required]),
-      department: new FormControl('',[Validators.required]),
+      department: new FormControl('',[Validators.required,Validators.email]),
       emailId: new FormControl('',[Validators.email]),
       doj: new FormControl('',[Validators.required])
 
@@ -25,10 +25,13 @@ export class NewEmployeeComponent implements OnInit {
   ngOnInit(): void {}
 
   addEmployee() {
-    console.log(this.empForm.value);
-    let user = this.empForm.value;
-    this.employeService.employee.push(user);
-    this.closeDialog();
+    if(this.empForm.valid) {
+      let user = this.empForm.value;
+      this.employeService.employee.push(user);
+      this.closeDialog();
+    } else {
+      this.empForm.markAllAsTouched();
+    }
   }
 
   closeDialog(){
