@@ -1,0 +1,7 @@
+.bottom-fix {
+    background-color: #343a40;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: wheat;
+}

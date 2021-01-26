@@ -1,33 +1,31 @@
-<div class="p-5 text-center bg-image wrapper" style="
-      background-image: url('/assets/pm1.jpg');
-      background-size: cover;
-      height: 500px;
-      background-repeat: no-repeat;
-      margin-top: 4%;
-    ">
-  <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); padding-bottom: 5%;padding-top: 5%;margin-top: 4%;">
+<div class="py-5 text-center bg-image wrapper center-wrapper">
+  <div class="mask">
     <div class="d-flex justify-content-center align-items-center h-100">
-      <div style="width: 80%;" >
+      <div style="width: 90%;" >
         <div class="row">
           <div class="col-md-12 ">
-            <div class="table-responsive" style="overflow: scroll;height: 400px;">
-              <table id="mytable" class="table table-bordred table-striped" style= "width: 100%">
+            <div class="table-responsive" style="height: 400px;">
+              <table id="mytable" class="table table-bordred table-striped" style= "width:1120px">
+                <thead class="sticky-header" > 
                   <tr style="background-color: royalblue;">
-                    <th *ngFor="let header of headers">{{header}}</th>
+                    <th  *ngFor="let header of headers">{{header}}</th>
                   </tr>
-                <tr *ngFor="let user of users" style="color: wheat;">
-                  <td>{{user.empName}}</td>
-                  <td>{{user.empId}}</td>
-                  <td>{{user.department}}</td>
-                  <td>{{user.emailId}}</td>
-                  <td>{{user.doj}}</td>
-                  <td *ngIf="users.length">
-                    <button
-                        class="btn btn-xs" data-title="Delete" data-toggle="modal"
-                        data-target="#delete" (click)="deleteUser(user)" ><span class="glyphicon glyphicon-remove" style="background-color : brown;">X</span>
-                    </button>
-                  </td>
-                </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of users" style="color: wheat;">
+                    <td>{{user.empName}}</td>
+                    <td>{{user.empId}}</td>
+                    <td>{{user.department}}</td>
+                    <td>{{user.emailId}}</td>
+                    <td>{{user.doj}}</td>
+                    <td *ngIf="users.length">
+                      <button
+                          class="btn btn-xs btn-danger" data-title="Delete" data-toggle="modal"
+                          data-target="#delete" (click)="deleteUser(user)" ><span class="glyphicon glyphicon-remove">X</span>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
               </table>
             </div>
           </div>
